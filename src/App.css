@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "octobercrow";
+  src: url("/fonts/october-crow.ttf");
+}
+
+@keyframes crescendo {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -10,13 +24,47 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(30px + 3vmin);
   color: white;
 }
 
 .App-link {
   color: #09d3ac;
+}
+.icon-container {
+  margin-top: -150px;
+  cursor: pointer;
+  padding: 0px 10px;
+  position: relative;
+}
+
+.icon-container:hover {
+  animation: crescendo 0.5s alternate infinite ease-in;
+}
+
+.action-icon {
+  width: 240px;
+  position: relative;
+}
+
+.action-flag {
+  z-index: 1;
+  width: 152px;
+  position: absolute;
+  top: 230px;
+  left: 49px;
+}
+
+.counter {
+  font-family: "octobercrow";
+  color: wheat;
+  position: absolute;
+  display: block;
+  top: 300px;
+  left: 10px;
+  z-index: 3;
+  width: 240px;
 }
